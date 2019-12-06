@@ -7,7 +7,13 @@
       <h5 class="agent-name">
         {{ agentName }}
       </h5>
-      <AgentMessageBubble :message="message" />
+      <AgentMessageBubble
+        :content-type="contentType"
+        :message-id="messageId"
+        :message-type="messageType"
+        :message="message"
+        :message-content-attributes="messageContentAttributes"
+      />
     </div>
   </div>
 </template>
@@ -26,6 +32,22 @@ export default {
     message: String,
     avatarUrl: String,
     agentName: String,
+    contentType: {
+      type: String,
+      default: '',
+    },
+    messageContentAttributes: {
+      type: Object,
+      default: () => {},
+    },
+    messageType: {
+      type: Number,
+      default: 1,
+    },
+    messageId: {
+      type: Number,
+      default: 0,
+    },
   },
 };
 </script>

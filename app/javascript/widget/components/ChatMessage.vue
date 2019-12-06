@@ -4,7 +4,15 @@
     :message="message.content"
     :status="message.status"
   />
-  <AgentMessage v-else :agent-name="agentName" :message="message.content" />
+  <AgentMessage
+    v-else
+    :agent-name="agentName"
+    :message-id="message.id"
+    :message="message.content"
+    :content-type="message.content_type"
+    :message-type="message.message_type"
+    :message-content-attributes="message.content_attributes"
+  />
 </template>
 
 <script>

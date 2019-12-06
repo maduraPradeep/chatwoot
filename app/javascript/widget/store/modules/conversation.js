@@ -87,6 +87,13 @@ const mutations = {
 
     payload.map(message => Vue.set(_state.conversations, message.id, message));
   },
+
+  updateMessage($state, { id, content_attributes }) {
+    $state.conversations[id] = {
+      ...$state.conversations[id],
+      content_attributes,
+    };
+  },
 };
 
 export default {
