@@ -7,7 +7,10 @@
     "pretest": "rimraf .jest-cache",
     "test": "jest --no-cache",
     "test:watch": "jest --watch --no-cache",
-    "test:coverage": "jest --no-cache --collectCoverage"
+    "test:coverage": "jest --no-cache --collectCoverage",
+    "start-redis-server":"redis-server",
+    "start-psql":"sudo service postgresql start",
+    "start": "npm start-redis-server && start-psql && foreman start -f Procfile.dev"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",

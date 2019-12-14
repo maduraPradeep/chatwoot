@@ -4,7 +4,7 @@ redis-server
 
 ### Run postgresql server
 
-sudo service psql start
+sudo service postgresql start
 
 
 ### Run the application
