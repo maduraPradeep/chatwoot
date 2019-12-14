@@ -1,14 +1,15 @@
 <template>
   <div class="settings-header">
     <h1 class="page-title">
+      <woot-sidemenu-icon></woot-sidemenu-icon>
       <back-button v-if="!showButton"></back-button>
-      <i :class="icon"></i>
+      <i :class="iconClass"></i>
       <span>{{ headerTitle }}</span>
     </h1>
     <router-link
       v-if="showNewButton && showButton && currentRole"
       :to="buttonRoute"
-      class="button icon success nice"
+      class="button icon success nice button--fixed-right-top"
     >
       <i class="icon ion-android-add-circle"></i>
       {{ buttonText }}
@@ -39,7 +40,7 @@ export default {
   },
   computed: {
     iconClass() {
-      return `icon ${this.props.icon}`;
+      return `icon ${this.icon} header--icon`;
     },
     currentRole() {
       const { role } = Auth.getCurrentUser();
